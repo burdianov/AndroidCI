@@ -1,9 +1,6 @@
 #
 # Build configuration for Circle CI
 #
-before_install:
-    - chmod +x gradlew
-
 machine:
 
   java:
