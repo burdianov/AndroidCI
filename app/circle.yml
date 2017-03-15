@@ -1,14 +1,18 @@
 #
 # Build configuration for Circle CI
 #
-machine:
+general:
+    artifacts:
+        - /home/ubuntu/YourApplicationName/app/build/outputs/apk/
 
+machine:
   java:
-    version: oraclejdk8
+      version: oraclejdk8
+
+  environment:
+      ANDROID_HOME: /usr/local/android-sdk-linux
 
 dependencies:
-    override:
-        - chmod +x gradlew
     pre:
       # Update Android dependent SDK and tools
       # These settings need to be synced with AndroidStudio build settings
