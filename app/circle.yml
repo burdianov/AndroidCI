@@ -1,8 +1,8 @@
 #
 # Build configuration for Circle CI
 #
-
-git update-index --chmod=+x gradlew
+before_install:
+    - chmod +x gradlew
 
 machine:
 
