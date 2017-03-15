@@ -7,14 +7,14 @@ machine:
     version: oraclejdk8
 
 dependencies:
+    override:
+      - chmod +x gradlew
+
     pre:
       # Update Android dependent SDK and tools
       # These settings need to be synced with AndroidStudio build settings
       -echo y | android update sdk --no-ui --all --filter tools,extra-android-m2repository,extra-android-support,android-25
       -echo y | android update sdk --no-ui --all --filter build-tools-25.0.2
-
-    override:
-      - chmod +x gradlew
 
 test:
     override:
