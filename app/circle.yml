@@ -1,6 +1,9 @@
 #
 # Build configuration for Circle CI
 #
+
+git update-index --chmod=+x gradlew
+
 machine:
 
   java:
@@ -16,5 +19,5 @@ dependencies:
 test:
     override:
 
-        - gradlew assembleDebug
+        - ./gradlew assembleDebug
         - cp -r app/build/outputs $CIRCLE_ARTIFACTS
